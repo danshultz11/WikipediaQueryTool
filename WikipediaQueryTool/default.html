@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WikipediaQueryTool</title>
+    <!-- WinJS references -->
+    <link rel="stylesheet" href="/winjs/css/ui-dark.css" />
+    <script src="/winjs/js/base.js"></script>
+    <script src="/winjs/js/ui.js"></script>
+    <script src="/winjs/js/binding.js"></script>
+    <script src="/winjs/js/controls.js"></script>
+    <script src="/winjs/js/animations.js"></script>
+    <script src="/winjs/js/uicollections.js"></script>
+    <script src="/winjs/js/wwaapp.js"></script>
+    <!-- WikipediaQueryTool references -->
+    <link rel="stylesheet" href="/css/default.css" />
+    <script src="/js/jquery-1.6.4.min.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+	<div id="pageGrid">
+    <h1 style="-ms-grid-column: 2; height: 41px; width: 444px;">Search Wikipedia</h1>
+    <div id="searchStatus" style="-ms-grid-column: 2; -ms-grid-row: 2;"></div>
+    <input id="txtSearchTerm" type="text" accesskey="s" style="-ms-grid-column: 2; -ms-grid-row: 3; height: 0px;" autofocus="autofocus" autocomplete="on"  />
+    <button id="btnSearch" style="-ms-grid-column: 3; -ms-grid-row: 3; height: 40.5px; width: 106.33px; top: 0.5px;">Search Wikipedia</button>
+
+    <div id="itemTemplate" data-win-control="WinJS.Binding.Template">
+        <div data-win-bind="innerHTML: link" class="wikipediaLink"></div>
+    </div>
+    <div id="exactMatchPlusResultsContainer" style="-ms-grid-column: 2; -ms-grid-row: 4; width: 426.5px; height: 572px; top: 28.5px;">
+		<div id="exactMatchLink" class="wikipediaLink"></div> 
+
+	<div id="resultsContainer" data-win-control="WinJS.UI.ListView" data-win-options="{itemRenderer:itemTemplate,layout:{type:WinJS.UI.GridLayout},oniteminvoked:wikiLinkItemInvoked}">
+		Related Pages:
+	</div>
+	</div>
+	<div id="wikiPageHTML"></div>
+	</div>
+
+
+</body>
+</html>

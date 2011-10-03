@@ -1,0 +1,77 @@
+﻿body {
+    font-size:62.5%;
+}
+
+@media screen and (-ms-view-state: full-screen)
+{
+ 
+}
+
+@media screen and (-ms-view-state: fill)
+{
+
+}
+
+@media screen and (-ms-view-state: snapped)
+{
+
+}
+		
+@media screen and (-ms-view-state: device-portrait)
+{
+
+}
+
+div span
+{
+    font-size: 1.2em;
+}
+
+.wikipediaLink
+{
+    color:#f00; 
+    height:75px;
+    width:130px;
+    border-top: 2px solid #999;
+    border-left: 2px solid #999;
+    border-right: 2px solid #444;
+    border-bottom: 2px solid #444;
+    text-align:center;
+    padding-top:1.5em;
+	margin:0.2em;
+    float:left;
+}
+
+#exactMatchLink
+{
+    color: #ff0;
+    display: none;
+}
+
+#resultsContainer
+{
+    clear:both;
+     width: 426px;
+     top: 21px;
+}
+
+#wikiPageHTML {
+	overflow-x: auto;
+	overflow-y: scroll;
+	-ms-grid-column: 5;
+	-ms-grid-row: 2;
+	height: 708px;
+	width: 535px;
+	left: 50px;
+	background-color: #FFFBEC;
+	color:#777777;
+	padding: 10px;
+}
+
+#pageGrid {
+	display: -ms-grid;
+	-ms-grid-columns: 27fr 321fr 106fr 18fr 533fr 19fr;
+	height: 767px;
+	-ms-grid-rows: 27fr 80fr 42fr 586fr 32fr;
+	width: 1024px;
+}
