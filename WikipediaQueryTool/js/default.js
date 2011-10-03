@@ -61,7 +61,7 @@
     }
 
     function processResults(request) {
-        $("#exactMatchLink").text("");
+        $("#exactMatchLink").hide("");
         var results = JSON.parse(request.response);
         if (results.length > 1) {
 			wikiItems = [];
@@ -104,7 +104,6 @@
 
     function processHtmlResults(request) {
         var pageHtml = request.response;
-        //msWWA.execUnsafeLocalFunction(function (){ $("#wikiPageHTML").html(pageHtml); });
         msWWA.execUnsafeLocalFunction(function (){ wikiPageHTML.innerHTML = pageHtml; });
     }
 
@@ -129,7 +128,9 @@
         //        break;
         //    default:
         //        goError("Unknown scenario!!!");
-		showWasClicked();
+        var curritem = resultsContainer.winControl.getElementAtIndex(e.detail.itemIndex);
+        var pageName = convertToWikipediaPath(curritem.children(1).children(0).children(0).innerText);
+        showWikipediaPage("http://www.wikipedia.org/wiki/" + pageName);
         //}
 
         //}
